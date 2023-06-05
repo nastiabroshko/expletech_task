@@ -85,7 +85,6 @@ export default function Modal_add_post() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
             </Row>
-
             <Button type="submit">Submit form</Button>
           </Form>
         </Modal>

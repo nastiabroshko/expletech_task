@@ -8,6 +8,7 @@ interface Post {
   title: string;
   body: string;
 }
+
 interface Comment {
   postId: number;
   id: number;
@@ -15,12 +16,14 @@ interface Comment {
   email: string;
   body: string;
 }
+
 const GET_POST_API = "https://jsonplaceholder.typicode.com/posts";
 const GET_COMMENTS_API = `https://jsonplaceholder.typicode.com/comments`;
 
 export default function Post() {
   const [post, setPost] = useState<Post[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
+
   useEffect(() => {
     async function getPostData() {
       const response = await axios.get<Post[]>(GET_POST_API);
@@ -28,6 +31,7 @@ export default function Post() {
     }
     getPostData();
   }, []);
+
   useEffect(() => {
     async function getCommentsData() {
       try {
@@ -39,6 +43,7 @@ export default function Post() {
     }
     getCommentsData();
   }, []);
+
   return (
     <div className="carousel_styles">
       <Carousel variant="white" className="carosel_size">
