@@ -1,0 +1,24 @@
+.button_add_post button {
+  background-color: transparent;
+  border: none;
+}
+
+.button_add_post button:hover {
+  background-color: transparent;
+}
+.modal-content button {
+  background-color: rgba(94, 113, 161, 0.459);
+  border: 3px solid #5a6788;
+  color: #ffffff;
+}
+
+.modal-content button:hover {
+  background-color: rgba(82, 98, 143, 0.379);
+  border: 3px solid #171a25;
+}
+button.btn.btn-primary:active {
+  background-color: rgba(94, 113, 161, 0.459);
+}
+button.btn.btn-primary:focus-visible {
+  border: none;
+}

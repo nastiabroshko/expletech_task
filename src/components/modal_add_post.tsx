@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
+import Button_bootstrap from "./button_bootstrap";
 import "../styles/modal_add_post.css";
 
 interface Post {
@@ -22,7 +23,7 @@ export default function Modal_add_post() {
     event.stopPropagation();
 
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    if (!form.checkValidity()) {
       setValidated(true);
       return;
     }
@@ -85,7 +86,7 @@ export default function Modal_add_post() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
             </Row>
-            <Button type="submit">Submit form</Button>
+            <Button_bootstrap></Button_bootstrap>
           </Form>
         </Modal>
       </div>

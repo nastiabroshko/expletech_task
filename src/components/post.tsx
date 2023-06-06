@@ -25,23 +25,25 @@ export default function Post() {
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
-    async function getPostData() {
-      const response = await axios.get<Post[]>(GET_POST_API);
-      setPost(response.data);
-    }
-    getPostData();
+    (async function () {
+      try {
+        const response = await axios.get<Post[]>(GET_POST_API);
+        setPost(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
   useEffect(() => {
-    async function getCommentsData() {
+    (async function () {
       try {
         const response = await axios.get<Comment[]>(GET_COMMENTS_API);
         setComments(response.data);
       } catch (error) {
         console.log(error);
       }
-    }
-    getCommentsData();
+    })();
   }, []);
 
   return (
